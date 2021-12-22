@@ -6,7 +6,6 @@ from urllib.parse import urlparse
 from pathlib import Path
 
 
-
 def shorten_link(bitly_token, user_input):
     requests.get(user_input).raise_for_status()
     header = {'Authorization': 'Bearer {}'.format(bitly_token)}
@@ -71,14 +70,15 @@ def main():
     load_dotenv()
     bitly_token = os.getenv('BITLY_TOKEN')
     parser = argparse.ArgumentParser(
-        description = 'Get a shortlink from a url or clicks from a shortlink'
+        description='Get a shortlink from a url or clicks from a shortlink'
     )
     parser.add_argument('url', help='url to be shortened or counted')
     args = parser.parse_args()
 
-    '''url = input('Please enter your link here\n') # these two lines for running from IDE
+    # these two lines for running from IDE
+    '''url = input('Please enter your link here\n')
     print(process_link(bitly_token, url))'''
-    
+
     print(process_link(bitly_token, args.url))
 
 if __name__ == "__main__":
