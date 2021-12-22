@@ -1,6 +1,7 @@
-#GIT files
+#GIT and VSC files
 .gitignore
 .gitattributes
+workspace.code-workspace
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
