@@ -3,7 +3,6 @@ import os
 import argparse
 from dotenv import load_dotenv
 from urllib.parse import urlparse
-from pathlib import Path
 
 
 def shorten_link(bitly_token, user_input):
@@ -74,11 +73,6 @@ def main():
     )
     parser.add_argument('url', help='url to be shortened or counted')
     args = parser.parse_args()
-
-    # these two lines for running from IDE
-    '''url = input('Please enter your link here\n')
-    print(process_link(bitly_token, url))'''
-
     print(process_link(bitly_token, args.url))
 
 if __name__ == "__main__":
